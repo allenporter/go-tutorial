@@ -13,33 +13,33 @@ import (
 
 type (
 	item struct {
-		XMLName	xml.Name `xml:"item"`
-		PubDate string `xml:"pubDate"`
-		Title string `xml:"title"`
-		Description string `xml:"description"`
-		Link string `xml:"link"`
-		GUID string `xml:"guid"`
+		XMLName     xml.Name `xml:"item"`
+		PubDate     string   `xml:"pubDate"`
+		Title       string   `xml:"title"`
+		Description string   `xml:"description"`
+		Link        string   `xml:"link"`
+		GUID        string   `xml:"guid"`
 	}
 
 	image struct {
 		XMLName xml.Name `xml:"image"`
-		URL string `xml:"url"`
-		Title string `xml:"title"`
-		Link string `xml:"link"`
+		URL     string   `xml:"url"`
+		Title   string   `xml:"title"`
+		Link    string   `xml:"link"`
 	}
 
 	channel struct {
-		XMLName xml.Name `xml:"channel"`
-		Title string `xml:"title"`
-		Description string `xml:"description"`
-		Link string `xml:"link"`
-		Image image `xml:"image"`
-		Item []item `xml:"item"`
+		XMLName     xml.Name `xml:"channel"`
+		Title       string   `xml:"title"`
+		Description string   `xml:"description"`
+		Link        string   `xml:"link"`
+		Image       image    `xml:"image"`
+		Item        []item   `xml:"item"`
 	}
 
 	rssDocument struct {
 		XMLName xml.Name `xml:"rss"`
-		Channel channel `xml:"channel"`
+		Channel channel  `xml:"channel"`
 	}
 )
 
@@ -72,7 +72,7 @@ func (m rssMatcher) retrieve(feed *search.Feed) (*rssDocument, error) {
 }
 
 func (m rssMatcher) Search(feed *search.Feed, searchTerm string) ([]*search.Result, error) {
-	var results[]*search.Result
+	var results []*search.Result
 
 	log.Printf("Search Feed Site[%s] for URI[%s]\n", feed.Name, feed.URI)
 
@@ -88,7 +88,7 @@ func (m rssMatcher) Search(feed *search.Feed, searchTerm string) ([]*search.Resu
 		}
 		if matched {
 			results = append(results, &search.Result{
-				Field: "Title",
+				Field:   "Title",
 				Content: channelItem.Title,
 			})
 		}
@@ -98,7 +98,7 @@ func (m rssMatcher) Search(feed *search.Feed, searchTerm string) ([]*search.Resu
 		}
 		if matched {
 			results = append(results, &search.Result{
-				Field: "Description",
+				Field:   "Description",
 				Content: channelItem.Description,
 			})
 		}

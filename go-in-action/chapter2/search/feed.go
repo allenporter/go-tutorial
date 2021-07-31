@@ -1,8 +1,8 @@
 package search
 
 import (
-  "os"
-  "encoding/json"
+	"encoding/json"
+	"os"
 )
 
 const feedsFile = "data/feeds.json"

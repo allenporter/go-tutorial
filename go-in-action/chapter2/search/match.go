@@ -1,12 +1,12 @@
 package search
 
 import (
-	"log"
 	"fmt"
+	"log"
 )
 
 type Result struct {
-	Field string
+	Field   string
 	Content string
 }
 

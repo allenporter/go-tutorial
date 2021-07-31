@@ -1,17 +1,17 @@
 package main
 
 import (
-    "log"
-    "os"
+	"log"
+	"os"
 
-    "example.com/go-in-action/chapter2/search"
-  _ "example.com/go-in-action/chapter2/matchers"
+	_ "example.com/go-in-action/chapter2/matchers"
+	"example.com/go-in-action/chapter2/search"
 )
 
 func init() {
-  log.SetOutput(os.Stdout)
+	log.SetOutput(os.Stdout)
 }
 
 func main() {
-  search.Run("fake")
+	search.Run("fake")
 }
