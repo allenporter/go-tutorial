@@ -1,0 +1,14 @@
+[
+  {
+    "site": "npr",
+    "link": "http://www.npr.org/rss/rss.php?id=1001"
+  },
+  {
+    "site": "cnn",
+    "link": "http://rss.cnn.com/rss/cnn_world.rss"
+  },
+  {
+    "site": "foxnews",
+    "link": "http://feeds.foxnews.com/foxnews/world?format=xml"
+  }
+]  
